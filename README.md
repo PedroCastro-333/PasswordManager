@@ -95,7 +95,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 git clone https://github.com/PedroCastro-333/PasswordManager.git
 
 # Acesso ao Diretório
-cd PasswordManager-main
+cd PasswordManager
 
 # Para instalar as dependências Python, utilize o arquivo requirements.txt
 pip install -r requirements.txt
