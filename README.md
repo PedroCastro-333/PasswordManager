@@ -88,12 +88,6 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 <h2>▶ Rodando o projeto </h2>
 
-<h3>Para instalar as dependências Python, utilize o arquivo requirements.txt: </h3>
-
-```bash
-pip install -r requirements.txt
-```
-
 <h3> Instalação e execução</h3>
 
 ```bash
@@ -102,6 +96,9 @@ git clone https://github.com/seu-usuario/nome-do-repositorio.git
 
 # Acesso ao Diretório
 cd nome-do-repositorio
+
+# Para instalar as dependências Python, utilize o arquivo requirements.txt
+pip install -r requirements.txt
 
 # Execução do Programa
 python main.py
@@ -116,7 +113,7 @@ python main.py
   <tr>
     <td align="center"><a href="https://github.com/PedroCastro-333">
       <br />
-      <h2><b>Pedro Castro</b></h2>
+      <h2><b>Pedro Macedo</b></h2>
       <br />
     </td>
     
