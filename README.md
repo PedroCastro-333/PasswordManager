@@ -92,10 +92,10 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ```bash
 # Clone este repositório
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
+git clone https://github.com/PedroCastro-333/PasswordManager.git
 
 # Acesso ao Diretório
-cd nome-do-repositorio
+cd PasswordManager-main
 
 # Para instalar as dependências Python, utilize o arquivo requirements.txt
 pip install -r requirements.txt
