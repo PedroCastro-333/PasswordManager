@@ -1,0 +1,3 @@
+# Diretórios a serem ignorados
+venv/
+__pycache__/
