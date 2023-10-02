@@ -1,5 +1,6 @@
 import pymongo
 
+
 class DbController:
     def __init__(self, url: str, db_name: str, collection_name: str) -> None:
         """
@@ -44,7 +45,6 @@ class DbController:
         """
         self.__collection.insert_one(document)
         return "Senha salva com sucesso"
-    
 
     def find(self, servico: str = None) -> tuple:
         """
@@ -67,46 +67,44 @@ class DbController:
         documents = [document for document in result]
 
         return documents
-    
+
     def delete(self, servico: str, usuario: str) -> None:
         if servico and usuario:
             # Define o critério de pesquisa com base no serviço e usuário
-            filtro = {"serviço": servico, "usuario": usuario}
 
             # Remove o documento que corresponde ao critério de pesquisa
-            result = self.__collection.delete_one(filtro)
+            result = self.__collection.find_one_and_delete(
+                {"serviço": servico, "usuário": usuario})
 
             if result.deleted_count > 0:
                 print("Senha deletada com sucesso.")
             else:
                 print("Senha não encontrada para exclusão.")
-        else:
-            print("Serviço e usuário são obrigatórios para a exclusão da senha.")
 
     def update_password(self, servico: str, usuario: str, nova_senha: str) -> None:
-            """
-            Atualiza a senha de um serviço e usuário no banco de dados.
+        """
+        Atualiza a senha de um serviço e usuário no banco de dados.
 
-            Esta função permite atualizar a senha associada a um serviço e usuário
-            específicos no banco de dados.
+        Esta função permite atualizar a senha associada a um serviço e usuário
+        específicos no banco de dados.
 
-            Args:
-                servico (str): O serviço cuja senha será atualizada.
-                usuario (str): O usuário associado ao serviço.
-                nova_senha (str): A nova senha para o serviço e usuário.
+        Args:
+            servico (str): O serviço cuja senha será atualizada.
+            usuario (str): O usuário associado ao serviço.
+            nova_senha (str): A nova senha para o serviço e usuário.
 
-            Returns:
-                None
-            """
-            # Verifica se o serviço e usuário existem no banco de dados
-            documento = self.__collection.find_one({"serviço": servico, "usuário": usuario})
-            if documento:
-                # Atualiza o campo "senha" com a nova senha
-                self.__collection.update_one(
-                    {"serviço": servico, "usuário": usuario},
-                    {"$set": {"senha": nova_senha}}
-                )
-                print("Senha atualizada com sucesso.")
-            else:
-                print("Serviço e/ou usuário não encontrado. Nenhuma senha foi atualizada.")
-
+        Returns:
+            None
+        """
+        # Verifica se o serviço e usuário existem no banco de dados
+        documento = self.__collection.find_one(
+            {"serviço": servico, "usuário": usuario})
+        if documento:
+            # Atualiza o campo "senha" com a nova senha
+            self.__collection.update_one(
+                {"serviço": servico, "usuário": usuario},
+                {"$set": {"senha": nova_senha}}
+            )
+            print("Senha atualizada com sucesso.")
+        else:
+            print("Serviço e/ou usuário não encontrado. Nenhuma senha foi atualizada.")

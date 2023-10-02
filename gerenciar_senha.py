@@ -18,8 +18,11 @@ class Senha:
         Returns:
             str: A senha gerada.
         """
+        if tamanho == "":
+            tamanho=12
 
-        caracteres = string.ascii_letters + string.digits
+        caracteres = string.ascii_letters + string.digits + string.punctuation
+
         senha = ''.join(random.choice(caracteres) for _ in range(tamanho))
         return senha
     

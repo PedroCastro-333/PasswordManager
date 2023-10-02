@@ -161,7 +161,7 @@ def deletar_senha() -> None:
             if c.upper() == 'S':
                 # Deleta a senha
                 DB_CONTROLLER.delete(servico, usuario)
-                print("Senha deletada com sucesso!")
+                
             else:
                 print("Senha não deletada.")
 
