@@ -33,7 +33,7 @@ def gerar_senha() -> None:
     # Solicita informações ao usuário
     servico = input("Para qual serviço gostaria de gerar uma senha?\n")
     usuario = input("Qual o usuário do serviço?\n")
-    tamanho_senha = int(input("Qual o tamanho da senha que gostaria de gerar?\n"))
+    tamanho_senha = input("Qual o tamanho da senha que gostaria de gerar?\n")
     hash_ = input("Deseja salvar a senha com hash? [S/N] (O padrão é NÃO)")
 
     # Gerando senha

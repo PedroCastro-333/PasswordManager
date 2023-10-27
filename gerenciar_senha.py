@@ -20,6 +20,8 @@ class Senha:
         """
         if tamanho == "":
             tamanho=12
+        else:
+            tamanho = int(tamanho)
 
         caracteres = string.ascii_letters + string.digits + string.punctuation
 
