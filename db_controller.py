@@ -76,7 +76,7 @@ class DbController:
             result = self.__collection.find_one_and_delete(
                 {"serviço": servico, "usuário": usuario})
 
-            if result.deleted_count > 0:
+            if result:
                 print("Senha deletada com sucesso.")
             else:
                 print("Senha não encontrada para exclusão.")
